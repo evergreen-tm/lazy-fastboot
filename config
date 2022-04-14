@@ -3,16 +3,16 @@
 # Config for LFB
 
 # Path to fastboot
-fbdir="/home/fishe/Downloads/platform-tools/fastboot"
+fbdir="/home/$USER/Downloads/platform-tools/fastboot"
 
 # Path to adb
-adbdir="/home/fishe/Downloads/platform-tools/adb"
+adbdir="/home/$USER/Downloads/platform-tools/adb"
 
 # Path to rom files (zips to sideload, files to flash to parition, etc.)
-fldir="/home/fishe/Downloads"
+fldir="/home/$USER/Downloads"
 
 # Directory to packs
-packdir="/home/fishe/bin/gsi/packs"
+packdir="/home/$USER/bin/gsi/packs"
 
 # These are used to create an array used to pattern match the packs
 inpackdir="$(ls "$packdir")"
@@ -21,5 +21,3 @@ declare -a defaults
 
 # Change $packname to $packdir/* if you want to use full paths
 declare -a packs=($packname)
-
-
