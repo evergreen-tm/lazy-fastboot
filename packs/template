@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Template for packs
+
+# Three-fingered claw error check method
+# Recommended as an easy way to check for errors and exit when there is one
+shout() { 
+  echo "$0: $*" >&2;
+}
+
+die() { 
+  shout "$*"; exit 111;
+}
+
+try() {
+  "$@" || die "Fastboot failed! Most likely, it could not find the file to flash.";
+}
+
+flash() {
+  # Replace fastboot with "$fbdir". Use "$fldir"/nam-of-file.img to point to the file.
+  try "$fbdir" flash example "$fldir"/gpt.bin
+}
+
+main() {
+  flash "$@"
+}
+
+main "$@"
