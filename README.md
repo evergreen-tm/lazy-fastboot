@@ -4,6 +4,9 @@ This is done through the use of packs. Packs are essentially sister scripts to l
 Defaults may be hard-coded via the config file. As I am lazy (and such was the inspiration of this project), you'll need to edit them to be your own username. Without them, lfb takes three arguments: Path to fastboot, directory containing the files to flash, and name of pack.
 With defaults, lfb takes two arguments. The first should always be -d or --default, to signify that you want to use them. The second should be the pack name.
 
+## Setting up
+Just make sure that lfb, config, and the packs directory are in the same place.
+
 ## Making a pack
 As packs are bash scripts, they can be adapted as needed. As long as they are sourced from the main script, they can communicate.
 There is no real correct way to do it, because there are so many ways, but something like the template may be a good place to start.
