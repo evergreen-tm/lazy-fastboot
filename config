@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Config for LFB
+
+# $SUDO_USER is used for these variables to find the right directories when ran with sudo.
+
+# Path to fastboot
+fbdir="/home/$SUDO_USER/Downloads/platform-tools/fastboot"
+
+# Path to adb
+adbdir="/home/$SUDO_USER/Downloads/platform-tools/adb"
+
+# Path to rom files (zips to sideload, files to flash to parition, etc.)
+fldir="/home/$SUDO_USER/Downloads"
+
+# Directory to packs
+packdir=/home/$SUDO_USER/bin/gsi/packs;
+
+# Set defaults to yes or no (Fine to keep it empty and just set defaults with -d)
+declare defaults;
+
+# Make array to find and cycle through packs	
+packs=();
+for packname in "$packdir"/*; do
+  [ -e "$packname" ] && packs+=("${packname##*/}")
+  # remove '##*/' for full paths 
+done
+
